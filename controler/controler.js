@@ -44,3 +44,33 @@ export const handleDelect = async (req, res) => {
     }
     res.send('delete a response');
 }
+
+export const handlePlaced = async (req, res) => {
+
+    try {
+        const placed = await studenDetail.find({}, {
+            "status": "Placed",
+        });
+
+        res.send(placed)
+
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}
+
+export const handleUnPlaced = async (req, res) => {
+    try {
+        const Unplaced = await studenDetail.find({}, {
+            "status": "Unplaced",
+        });
+
+        res.send(Unplaced)
+
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}
+//Unplaced
+
+//Placed

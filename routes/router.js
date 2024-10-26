@@ -1,5 +1,6 @@
 import express from "express"
-import { getAllData, handleDelect, handlePost, handleUpdata } from "../controler/controler.js";
+import { getAllData, handleDelect, handlePlaced, handlePost, handleUnPlaced, handleUpdata } from "../controler/controler.js";
+
 
 const router = express.Router();
 
@@ -14,5 +15,10 @@ router.delete('/:id',handleDelect)
 
 // update the single data
 router.put('/:id',handleUpdata)
+
+
+router.get('/Placed',handlePlaced);
+router.get('/Unplaced',handleUnPlaced);
+
 
 export default router
