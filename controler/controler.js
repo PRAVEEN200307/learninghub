@@ -48,9 +48,9 @@ export const handleDelect = async (req, res) => {
 export const handlePlaced = async (req, res) => {
 
     try {
-        const placed = await studenDetail.find({}, {
-            "status": "Placed",
-        });
+        const placed = await studenDetail.find( {
+            status: "Placed",
+        }).exec();
 
         res.send(placed)
 
@@ -61,9 +61,9 @@ export const handlePlaced = async (req, res) => {
 
 export const handleUnPlaced = async (req, res) => {
     try {
-        const Unplaced = await studenDetail.find({}, {
-            "status": "Unplaced",
-        });
+        const Unplaced = await studenDetail.find({
+            status: "Unplaced",
+        }).exec()
 
         res.send(Unplaced)
 
